@@ -1,17 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-header collapse="condense">
+    <div class="headers">
+      <h1 class="title_Pokemon">{{Namepokemon}}</h1>
+      <img alt="Pokemon poke-api" src={{data.image}} />
+    </div>
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Experiencia base</ion-label>
+        </ion-list-header>
+          <ion-item >
+            <ion-label>{{data.base_experience}}</ion-label>
+          </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Habilidades</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let habilidad of data.habilidades">
+          <ion-label>{{habilidad.ability.name}}</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Atributos</ion-label>
+        </ion-list-header>
+          <ion-item *ngFor="let attr of data.atributos">
+            <ion-label>{{attr.stat.name}}</ion-label>
+          </ion-item>
+      </ion-list>
+      
+      <ion-list>
+        <ion-list-header>
+          <ion-label>Movimientos</ion-label>
+        </ion-list-header>
+          <ion-item *ngFor="let movimiento of data.movimientos">
+            <ion-label>{{movimiento.move.name}}</ion-label>
+          </ion-item>
+      </ion-list>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>

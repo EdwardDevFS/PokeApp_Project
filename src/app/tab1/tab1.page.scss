@@ -1,0 +1,53 @@
+
+
+.initial-background{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.848) 0%, rgba(0, 0, 0, 0.881) 100%) ,url(https://i.pinimg.com/236x/0a/ca/be/0acabeb8b88bfb6321eff06d991ffc73.jpg);    
+    min-height: 35vh;
+    max-height: 45vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+    box-shadow: 1px 4px 13px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 4px 13px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 4px 13px 0px rgba(0,0,0,0.75);
+}
+
+.image-caption{
+    position: absolute;
+    height: 100%;
+    margin: 24px 24px;
+}
+.pokemon-logo{
+    width: 100%;
+    height: 10vh;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+h5{
+    text-align: justify;
+}
+h3{
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+}
+h5{
+    font-family: 'Quicksand', sans-serif;
+}
+.poke_span{
+    color: yellow;
+    font-family: 'Rampart One', cursive;
+}
+.app_span{
+    color: red;
+    font-family: 'Rampart One', cursive;
+}
+.ionic_span{
+    color: rgb(32, 93, 247);
+}

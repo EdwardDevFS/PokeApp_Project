@@ -1,0 +1,23 @@
+.title_Pokemon{
+    margin: 1em 0 0 1em;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 11;
+}
+.headers{
+    display: flex;
+    gap: 5px;
+    img{
+        position: absolute;
+        width: 15em;
+        height: 15em;
+        z-index: 10;
+        right: -2em;
+        top: -2em;
+        margin: 15px;
+    }
+}
+.hydrated {
+    z-index: 11;
+}

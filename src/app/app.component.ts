@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Tab1Page } from './tab1/tab1.page';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+
+  component = Tab1Page;
   constructor() {}
 }

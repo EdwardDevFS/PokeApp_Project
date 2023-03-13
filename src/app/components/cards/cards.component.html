@@ -1,0 +1,30 @@
+<!-- <ion-card *ngFor="let pokemon of pokemons">
+  <img alt="Silhouette of mountains" src={{pokemon.image}}  />
+    <ion-card-content>
+    <ion-card-header>
+      <ion-card-title></ion-card-title>
+      <ion-card-subtitle>{{pokemon.name}}</ion-card-subtitle>
+    </ion-card-header>
+
+      Here's a small text description for the card content. Nothing more, nothing less.
+    </ion-card-content>
+</ion-card> -->
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>POKEMON LIST</ion-card-title>
+    <ion-card-subtitle>Esta es una lista de 100 pokemones, en caso no encontrar el que deseas, por favor buscalo en el buscador de arriba.</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngFor="let pokemon of pokemons">
+        <ion-item (click)="DetailPokemon(pokemon.name)">
+          <ion-thumbnail slot="start">
+              <img alt="Silhouette of mountains" src={{pokemon.image}} />
+            </ion-thumbnail>
+            <ion-label>{{pokemon.name}}</ion-label>
+          </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-card-content>
+</ion-card>

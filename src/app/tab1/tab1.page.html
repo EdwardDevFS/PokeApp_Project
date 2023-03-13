@@ -1,17 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <div class="initial-background">
+    <div class="image-caption">
+      <h3>
+        <b>BIENVENIDO A LA <span class="app_span">APP</span>
+        </b>
+        <div class="pokemon-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="">
+        </div>
+      </h3>
+      <!-- POKE = AMARILLO, APP = ROJO, IONIC = AZUL-->
+      <h5>Aquí encontrarás algunos de los pokemones e información de cada uno</h5>
+      <ion-searchbar 
+        [debounce]="1000" 
+        (ionChange)="handleChange($event)" 
+        animated="true" 
+        search-icon="search-circle" 
+        placeholder="Buscar pokemones"
+        ></ion-searchbar>
+    </div>
+  </div>
 </ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+<ion-content>
+  <app-cards *ngIf="!query"></app-cards>
+  <ion-card *ngIf="query">
+    <ion-card-header>
+      <ion-card-title>POKEMON LIST</ion-card-title>
+      <ion-card-subtitle>Aquí tienes una lista de pokemones, Tambien puedes filtrar por nombre en el buscador.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let result of results">
+          <ion-item (click)="DetailPokemon(result.name)">
+            <ion-thumbnail slot="start">
+                <img alt="Silhouette of mountains" src={{result.image}} />
+              </ion-thumbnail>
+              <ion-label>{{result.name}}</ion-label>
+            </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
